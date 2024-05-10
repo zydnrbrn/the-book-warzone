@@ -146,3 +146,73 @@ fn comparison_operator() {
         _ => println!("Good Night!"),
     }
 }
+
+#[test]
+fn playing_with_tuple() {
+    let mut tuple: (i64, usize, char) = (100, 198, 'Z');
+    // this is destructuring tuple
+    let (first, second, third) = tuple;
+
+    println!("First: {}, Second: {}, Third: {}", first, second, third);
+
+    // mutable tuple
+    tuple.0 = 200;
+    tuple.1 = 300;
+    tuple.2 = 'A';
+
+    println!(
+        "First: {}, Second: {}, Third: {}",
+        tuple.0, tuple.1, tuple.2
+    );
+}
+
+#[test]
+fn unit() {
+    println!("Hello Dad!");
+}
+
+#[test]
+fn test_unit() {
+    let dad_greet = unit();
+    println!("{:?}", dad_greet);
+}
+
+#[test]
+fn array_playground() {
+    // Array is just accept on data type
+    let array = [1, 2, 3, 4];
+
+    println!(
+        "First: {}, Second: {}, Third: {}, Fourth: {}",
+        array[0], array[1], array[2], array[3]
+    );
+
+    let mut array_mutable = [4, 6, 7, 3, 2, 9];
+
+    println!("This is array before mutable {:?}", array_mutable);
+
+    array_mutable[0] = 1;
+    array_mutable[1] = 2;
+    array_mutable[2] = 3;
+    array_mutable[3] = 4;
+    array_mutable[4] = 5;
+    array_mutable[5] = 6;
+
+    println!("This is array after mutable {:?}", array_mutable);
+}
+
+#[test]
+fn two_dimentional_array() {
+    let array: [[i32; 3]; 2] = [[1, 2, 3], [4, 5, 6]];
+
+    println!("{:?}", array);
+}
+
+const MAXIMAL_NUMBER: i32 = 100;
+
+#[test]
+fn play_with_const() {
+    const PI: f64 = 3.14;
+    println!("The value of PI is {}", PI);
+    println!("The maximal number is {}", MAXIMAL_NUMBER);
+}
