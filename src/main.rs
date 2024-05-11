@@ -216,3 +216,40 @@ fn play_with_const() {
     println!("The value of PI is {}", PI);
     println!("The maximal number is {}", MAXIMAL_NUMBER);
 }
+
+#[test]
+fn play_with_if() {
+    let number = 10;
+
+    if number > 10 {
+        println!("The number is greater than 10");
+    } else if number < 10 {
+        println!("The number is less than 10");
+    } else {
+        println!("The number is equal to 10");
+    }
+}
+
+#[test]
+fn play_with_loop() {
+    let mut number = 0;
+
+    loop {
+        println!("The number is {}", number);
+        number += 1;
+
+        if number == 10 {
+            break;
+        }
+    }
+}
+
+#[test]
+fn play_with_while() {
+    let mut number = 0;
+
+    while number < 10 {
+        println!("The number is {}", number);
+        number += 1;
+    }
+}
